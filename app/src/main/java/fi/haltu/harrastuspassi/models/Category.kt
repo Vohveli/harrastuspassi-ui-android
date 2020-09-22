@@ -15,4 +15,10 @@ class Category : Serializable {
     override fun toString(): String {
         return "\nneme: ${this.name}" + "\nnameFi: ${this.nameFi}" + "\nnameEn: ${this.nameEn}" + "\nnameSv: ${this.nameSv}"
     }
+    fun createSearchHistory(str: String) {
+        name = str
+        nameFi = str
+        nameEn = str
+        nameSv = str
+    }
 }

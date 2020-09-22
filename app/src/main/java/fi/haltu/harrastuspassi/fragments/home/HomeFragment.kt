@@ -243,7 +243,12 @@ class HomeFragment : Fragment(), LocationListener {
                     val jsonArray = JSONArray(result)
 
                     categoryList.clear()
-                    categoryList = jsonArrayToSingleCategoryList(jsonArray)
+
+                    var searchHistory = Category()
+                    searchHistory.createSearchHistory("Mursu")
+                    categoryList.add(searchHistory)
+
+                    categoryList.addAll(jsonArrayToSingleCategoryList(jsonArray))
                     searchEditText.setAdapter(
                         CategorySearchAdapter(
                             context!!,
